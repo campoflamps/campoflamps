@@ -22,7 +22,7 @@ title: Camp of Lamps
 email: 
 description: >- # this means to ignore newlines until "baseurl:"
   Build your next cycling event with the professionals at Camp of Lamps.
-baseurl: "campoflamps.com" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://www.campoflamps.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: 
 github_username:  
@@ -32,6 +32,9 @@ instagram_username: campoflamps
 # Build settings
 plugins:
   - jekyll-feed
+
+# Google Analytics
+google_analytics: G-ZE2GDM2VPG
 
 # Exclude from processing.
 # The following items will not be processed, by default.
