@@ -435,3 +435,47 @@ button {
     display: block;
     margin: 0 auto;
 }
+
+/**
+ * Contact Page Styles
+ */
+section {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.iframe-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    background-color: $background-color;
+    
+    iframe {
+        width: 100%;
+        max-width: 640px;
+        height: 853px;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        background-color: white;
+    }
+    
+    @include media-query($tablet) {
+        padding: 0.75rem;
+    }
+    
+    @include media-query($on-palm) {
+        padding: 0.5rem;
+        
+        iframe {
+            height: 900px; // Slightly taller on mobile to account for form elements
+        }
+    }
+    
+    @include media-query($mobile) {
+        padding: 0.25rem;
+    }
+}
