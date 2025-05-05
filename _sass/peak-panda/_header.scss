@@ -2,99 +2,27 @@ header {
     .wrapper {
         padding-top: 20px;
         padding-bottom: 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
     }
     .site-title {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        font-weight: $heading-bold;
-        font-size: 1.5rem;
-        color: $text-color;
-        
+        display: block;
         img {
             width: 60px;
-            margin-right: 1rem;
+            display: inline;
         }
     }
     nav.site-nav {
         display: flex;
-        align-items: center;
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
+        width: 50%;
+        justify-content: space-between;
         .trigger {
             text-align: center;
-            
-            .page-link {
-                color: $text-color;
-                text-decoration: none;
-                font-weight: $heading-half-bold;
-                font-size: 1.1rem;
-                padding: 0.5rem 1rem;
-                border-radius: 5px;
-                transition: all 0.2s ease;
-
-                &:hover {
-                    color: $brand-color;
-                    background-color: rgba($brand-color, 0.1);
-                }
-            }
         }
-
-        .nav-trigger {
-            display: none;
-        }
-
-        .nav-trigger--label {
-            display: none;
-        }
-
         @include media-query($on-palm) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                right: 1rem;
-                background-color: white;
-                padding: 1rem;
-                border-radius: 10px;
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-                flex-direction: column;
-                gap: 1rem;
-                z-index: 1000;
-            }
-
-            .nav-trigger:checked ~ .nav-links {
-                display: flex;
-            }
-
-            .nav-trigger--label {
-                display: block;
-                cursor: pointer;
-                
-                .menu-icon, .close-icon {
-                    width: 24px;
-                    height: 24px;
-                }
-
-                .close-icon {
-                    display: none;
-                }
-            }
-
-            .nav-trigger:checked ~ .nav-trigger--label {
-                .menu-icon {
-                    display: none;
-                }
-                .close-icon {
-                    display: block;
-                }
+            flex-direction: column;
+            width: auto;
+            border-radius: 10px;
+            .trigger .page-link {
+                margin-left: 0;
             }
         }
     }
