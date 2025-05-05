@@ -99,6 +99,10 @@ img {
     img {
         border-radius: 10px;
         box-shadow: 1px 1px 15px 0px $grey-color-dark;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        aspect-ratio: 16/9;
     }
 }
 
@@ -260,29 +264,60 @@ pre {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 2rem;
+    
     &.flex-align-start {
         align-items: flex-start;
     }
+    
     .flex-half {
         width: 45%;
+        
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
     }
+    
     .flex-3-col {
         width: 30%;
+        
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            aspect-ratio: 1/1;
+        }
     }
+    
+    @include media-query($tablet) {
+        gap: 1.5rem;
+    }
+    
     @include media-query($on-palm) {
         flex-wrap: wrap;
+        gap: 1rem;
+        
         .flex-3-col {
             width: 100%;
-            margin-bottom: 20px;
+            margin-bottom: 1rem;
+            
             &:last-of-type {
                 margin-bottom: 0;
             }
+            
+            img {
+                aspect-ratio: 16/9;
+            }
         }
     }
+    
     @include media-query($mobile) {
         .flex-half {
             width: 100%;
-            margin-bottom: 20px;
+            margin-bottom: 1rem;
+            
             &:last-of-type {
                 margin-bottom: 0;
             }
