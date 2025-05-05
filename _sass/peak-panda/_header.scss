@@ -2,27 +2,99 @@ header {
     .wrapper {
         padding-top: 20px;
         padding-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
     .site-title {
-        display: block;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        font-weight: $heading-bold;
+        font-size: 1.5rem;
+        color: $text-color;
+        
         img {
             width: 60px;
-            display: inline;
+            margin-right: 1rem;
         }
     }
     nav.site-nav {
         display: flex;
-        width: 50%;
-        justify-content: space-between;
+        align-items: center;
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
         .trigger {
             text-align: center;
+            
+            .page-link {
+                color: $text-color;
+                text-decoration: none;
+                font-weight: $heading-half-bold;
+                font-size: 1.1rem;
+                padding: 0.5rem 1rem;
+                border-radius: 5px;
+                transition: all 0.2s ease;
+
+                &:hover {
+                    color: $brand-color;
+                    background-color: rgba($brand-color, 0.1);
+                }
+            }
         }
+
+        .nav-trigger {
+            display: none;
+        }
+
+        .nav-trigger--label {
+            display: none;
+        }
+
         @include media-query($on-palm) {
-            flex-direction: column;
-            width: auto;
-            border-radius: 10px;
-            .trigger .page-link {
-                margin-left: 0;
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 1rem;
+                background-color: white;
+                padding: 1rem;
+                border-radius: 10px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                flex-direction: column;
+                gap: 1rem;
+                z-index: 1000;
+            }
+
+            .nav-trigger:checked ~ .nav-links {
+                display: flex;
+            }
+
+            .nav-trigger--label {
+                display: block;
+                cursor: pointer;
+                
+                .menu-icon, .close-icon {
+                    width: 24px;
+                    height: 24px;
+                }
+
+                .close-icon {
+                    display: none;
+                }
+            }
+
+            .nav-trigger:checked ~ .nav-trigger--label {
+                .menu-icon {
+                    display: none;
+                }
+                .close-icon {
+                    display: block;
+                }
             }
         }
     }
