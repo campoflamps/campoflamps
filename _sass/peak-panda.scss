@@ -26,6 +26,7 @@ $brand-color: #3798B3 !default; /*primary color, purple original #5844FF, now bl
 $grey-color: #d0977c !default; /*bg color, grey original #828282, now light red*/
 $grey-color-light: lighten($grey-color, 40%) !default;
 $grey-color-dark: darken($grey-color, 25%) !default;
+$grey-color-light_original: lighten(#828282, 40%) !default;
 $hero-color: #b35237; /*secondary color, yellow original #e9c85d, now red*/
 $table-text-align: left !default;
 // Width of the content area
